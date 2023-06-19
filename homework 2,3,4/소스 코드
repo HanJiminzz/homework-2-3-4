@@ -1,1 +1,35 @@
-#include<stdio.h>
+var AWS = require('aws-sdk');
+
+AWS.config.update({
+    accessKeyId: AKIA3OHEVZNAD7PGK75Q,
+    secretAccessKey: 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,
+    region: ap-northeast-2
+});
+
+var params = {
+    Image: {
+        S3Object: {
+            Bucket: "gkswlals",
+            Name: " "
+        }
+    },
+
+    MaxLables: 5,
+    MinConfidence: 80
+};
+
+const rekognition = new AWS.Rekognition();
+
+rekognition.detectLables(params, function(err, data)
+{
+    if (err) console.log(err, err.stack);
+    else     console.log(data);
+})
+
+const rekognition = new AWS.Rekognition();
+
+rekognition.detectLables(params, function(err, data)
+{
+    if (err) console.log(err, err.stack);
+    else     console.log(data);
+})
